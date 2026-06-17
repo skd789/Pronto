@@ -5,41 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Create Ticket</title>
 
+<link rel="stylesheet" href="../style.css">
+
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
-
-body{
-    background:linear-gradient(135deg,#f4f7fb,#e8eefc);
-    min-height:100vh;
-}
-
-.navbar{
-    background:white;
-    padding:15px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo{
-    font-size:24px;
-    font-weight:bold;
-    color:#2563eb;
-}
-
-.user{
-    font-weight:500;
-}
 
 .container{
     width:90%;
-    max-width:1000px;
+    max-width:1200px;
     margin:40px auto;
 }
 
@@ -52,39 +24,10 @@ body{
 
 .ticket-card h2{
     margin-bottom:25px;
-    color:#1f2937;
 }
 
 .form-group{
     margin-bottom:20px;
-}
-
-label{
-    display:block;
-    margin-bottom:8px;
-    font-weight:600;
-    color:#374151;
-}
-
-input,
-select,
-textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:8px;
-    font-size:15px;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-    outline:none;
-    border-color:#2563eb;
-}
-
-textarea{
-    resize:vertical;
 }
 
 .row{
@@ -96,6 +39,21 @@ textarea{
     flex:1;
 }
 
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
 .btn{
     background:#2563eb;
     color:white;
@@ -103,148 +61,182 @@ textarea{
     padding:12px 25px;
     border-radius:8px;
     cursor:pointer;
-    font-size:16px;
-    transition:0.3s;
 }
 
 .btn:hover{
     background:#1d4ed8;
 }
+
 </style>
 
 </head>
 <body>
 
-<div class="navbar">
-    <div class="logo">pronto</div>
-    <div class="user">Welcome, Admin</div>
-</div>
+<nav class="navbar">
 
-<div class="container">
+    <div class="logo">
+        pronto
+    </div>
 
-    <div class="ticket-card">
+    <div class="nav-menu">
 
-        <h2>Create New Ticket</h2>
+        <a href="../index.html" class="nav-item">
+            📊 Dashboard
+        </a>
 
-        <form>
-
-            <div class="row">
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>Pronto Number</label>
-                        <input type="text" placeholder="Enter Pronto Number">
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>Country</label>
-                        <input type="text" placeholder="Enter Country">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>Unit Part Code</label>
-                        <input type="text" placeholder="Enter Part Code">
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>Unit Name</label>
-                        <input type="text" placeholder="Enter Unit Name">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>Unit Version</label>
-                        <input type="text" placeholder="Enter Version">
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>Serial Number</label>
-                        <input type="text" placeholder="Enter Serial Number">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="form-group">
-                <label>Field Fault Description</label>
-                <textarea rows="5" placeholder="Describe the fault"></textarea>
-            </div>
-
-            <div class="row">
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>Priority</label>
-                        <select>
-                            <option>Select Priority</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>No Priority</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>RC Owner</label>
-                        <input type="text" placeholder="Enter RC Owner">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>R&D Owner</label>
-                        <input type="text" placeholder="Enter R&D Owner">
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="form-group">
-                        <label>Received Date</label>
-                        <input type="date">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="form-group">
-                <label>RC Analysis Steps</label>
-                <textarea rows="4" placeholder="Enter analysis details"></textarea>
-            </div>
-
-            <button type="submit" class="btn">
-                Create Ticket
+        <div class="nav-dropdown">
+            <button class="nav-item">
+                🎫 Tickets
             </button>
 
-        </form>
+            <div class="dropdown-content">
+                <a href="create-ticket.html">Create Ticket</a>
+                <a href="edit-ticket.html">View / Edit Ticket</a>
+                <a href="closed-ticket.html">Closed Tickets</a>
+            </div>
+        </div>
 
     </div>
 
+</nav>
+
+<div class="container">
+
+<div class="ticket-card">
+
+<h2>Create New Ticket</h2>
+
+<form>
+
+    <div class="row">
+
+        <div class="col">
+            <div class="form-group">
+                <label>Intimate Date from PL</label>
+                <input type="date">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label>Country</label>
+                <select>
+                    <option>Select Country</option>
+                    <option>India</option>
+                    <option>Germany</option>
+                    <option>USA</option>
+                    <option>France</option>
+                    <option>Japan</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label>Pronto Number</label>
+        <input type="text" placeholder="Enter Pronto Number">
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <div class="form-group">
+                <label>Unit Part Code</label>
+
+                <select id="partCode">
+                    <option value="">Select Part Code</option>
+                    <option value="PC1001">PC1001</option>
+                    <option value="PC1002">PC1002</option>
+                    <option value="PC1003">PC1003</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label>Unit Name</label>
+                <input type="text" id="unitName" readonly>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <div class="form-group">
+                <label>Part Group</label>
+                <input type="text" id="partGroup" readonly>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label>Part Family</label>
+                <input type="text" id="partFamily" readonly>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <div class="form-group">
+                <label>Unit Version</label>
+                <input type="text" placeholder="Enter Unit Version">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label>Unit Serial Number</label>
+                <input type="text" placeholder="Enter Serial Number">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label>Field Fault Description</label>
+        <textarea rows="5"></textarea>
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <div class="form-group">
+                <label>Owner Type</label>
+
+                <select>
+                    <option>Select Owner Type</option>
+                    <option>RC Owner</option>
+                    <option>R&D Owner</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label>Owner Name</label>
+                <input type="text">
+            </div>
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn">
+        Create Ticket
+    </button>
+
+</form>
+
 </div>
+
+</div>
+
+<script src="../ticket.js"></script>
 
 </body>
 </html>
